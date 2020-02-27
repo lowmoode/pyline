@@ -19,6 +19,7 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Contribution guidelines ###
 
+* Fast info about git and Python
 * Writing tests
 * Code review
 * Other guidelines
