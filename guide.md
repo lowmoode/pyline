@@ -12,4 +12,55 @@ list(**range(5,20,2)**) --> [5,7,9,11,13,15,17,19]
 ### for loop  
 **for** x **in** someList --> Итерация через список  
 **for** i **in range(5)** --> Итерация по заданному списку  
-### Задание. Простой калькулятор
+### Задание. Простой калькулятор  
+
+### Functions  
+**func_name(func_argument)**  
+def my_func(): -- *define before they are called*
+    print("spam")  
+### Arguments  
+def print_with_exclamation(word):  
+    print(word + "!")  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
