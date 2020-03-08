@@ -2,13 +2,13 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+## What is this repository for"?" ##
 
-* Быстрые записи для Python в одну строчку 
+* Быстрые записи для Python в одну строчку  
 * Version 1.0.0
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### How do I get set up"?" ###
 
 * Summary of set up
 * Configuration
