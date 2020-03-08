@@ -1,7 +1,6 @@
 
 # Python
 
-
 ## Range
 
 **range()** --> range object создает список чисел  
@@ -33,45 +32,4 @@ def my_func(): -- *define before they are called*
 def print_with_exclamation(word):  
     print(word + "!")  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Function arguments cannot be referenced outside of the function's  definition.

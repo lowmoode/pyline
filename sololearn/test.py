@@ -1,0 +1,1 @@
+# print(list(range(0, 100, 5))) # print range from 0 to 100 by 5 step or 100 / 5 = 20 items
