@@ -51,3 +51,35 @@ from math import pi, sqrt     # another standart module
 # raise ValueError
 # print(2)
 
+# name = "123"
+# raise NameError("Invalid name!")
+
+#num = input(":")
+#if float(num)<0: 
+#    raise ValueError("Negative!")
+#else:
+#    print("good boy!")
+
+# try:
+#     print("some word")
+#     num = 5 / 0
+# except:
+#     print("An error occurred")
+#     raise
+
+#__________________________________Assertions______________________________
+
+# print(1)
+# assert 2 + 2 == 4
+# print(2)
+# assert 1 + 1 == 3
+# print(3)
+
+# Assertions can be caught and handled like any other exception using the 
+# try-except statement
+
+try:
+    temp = -10
+    assert (temp >= 0), "Colder than absolute zero!"
+except:
+     print ("cold")

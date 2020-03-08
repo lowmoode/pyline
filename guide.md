@@ -163,6 +163,8 @@ This code will run no matter what
 
 ### Raising Exceptions
 
+___
+
 You can raise exceptions by using the raise statement.
 
 ```py
@@ -176,4 +178,99 @@ Result:
 ```py
 1
 ValueError
+```
+
+**Exceptions** can be **raised** with arguments that give detail about them.  
+For example:
+
+```py
+name = "123"
+raise NameError("Invalid name!")
+```
+
+Result:
+
+```py
+NameError: Invalid name!
+```
+
+In except blocks, the raise statement can be used without arguments to re-raise whatever exception occurred.
+For example:  
+
+```py
+try:
+   num = 5 / 0
+except:
+   print("An error occurred")
+   raise
+```
+
+Result:
+
+```py
+An error occurred
+ZeroDivisionError: division by zero
+```
+
+### Assertions (Оператор контроля)
+
+An expression is tested, and if the result comes up **false**, an exception is **raised**.  
+
+```py
+print(1)
+assert 2 + 2 == 4
+print(2)
+assert 1 + 1 == 3
+print(3)
+```
+
+Result:
+
+```py
+1
+2
+AssertionError
+```
+
+AssertionError exceptions can be caught and handled like any other exception using the **try-except** statement, but **if not handled**, this type of exception will **terminate** the program.
+
+## Opening Files
+
+```py
+myfili = open("filename.txt")
+```
+
+The argument of the open function is the path to the file. If the file is in the current working directory of the program, you can specify only its name.
+
+You can specify the mode used to open a file:  
+
+* Sending "r" means open in read mode, **which is the default**.
+* Sending "w" means write mode, for rewriting the contents of a file.
+* Sending "a" means append mode, for adding new content to the end of the file.
+* Adding "b" to a mode opens it in binary mode, which is used for non-text files (such as image and sound files
+
+```py
+open("filename.txt", "w")
+open("filename.txt", "r")
+open("filename.txt", "wb")
+```
+
+You can use the + sign with each of the modes above to give them extra access to files. For example, r+ opens the file for both reading and writing.  
+
+Once a file has been opened and used, you should close it.
+This is done with the close method of the file object.
+
+```py
+file.close()
+```
+
+## Reading Files
+
+The contents of a file that has been opened in text mode can be read using the read method.
+
+```py
+file = open("filename.txt", "r")
+cont = file.read()
+print(cont)
+file.close()
 ```
