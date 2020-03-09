@@ -266,6 +266,7 @@ file.close()
 
 ## Reading Files
 
+Не забудь переключить терминал в **рабочую директорию** чтобы работать с фалами.  
 The contents of a file that has been opened in text mode can be read using the read method.
 
 ```py

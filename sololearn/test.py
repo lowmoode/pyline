@@ -78,8 +78,15 @@ from math import pi, sqrt     # another standart module
 # Assertions can be caught and handled like any other exception using the 
 # try-except statement
 
-try:
-    temp = -10
-    assert (temp >= 0), "Colder than absolute zero!"
-except:
-     print ("cold")
+#try:
+#    temp = -10
+#    assert (temp >= 0), "Colder than absolute zero!"
+#except:
+#     print ("cold")
+
+# _________________________________Открытие и чтение файла____________________________
+
+file = open("textfile.txt", "r")
+cont = file.read()
+print(cont)
+file.close()
