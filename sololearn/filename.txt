@@ -1,2 +1,2 @@
-Some text it txt file on first line
+Some text in .txt file on first line
 Another text in text file on second line

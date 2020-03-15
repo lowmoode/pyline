@@ -86,7 +86,95 @@ from math import pi, sqrt     # another standart module
 
 # _________________________________Открытие и чтение файла____________________________
 
-file = open("textfile.txt", "r")
-cont = file.read()
-print(cont)
-file.close()
+# file = open("textfile.txt", "r")
+# cont = file.read()
+# print(cont)
+# file.close()
+
+# file = open("filename.txt", "r")
+# print(file.read(5))    # +1 байт на пробел
+# print(file.read(5))
+# print(file.read(3))
+# print(file.read())
+# file.close()
+
+# file = open("filename.txt", "r")
+# #file.read()
+# print("Re-reading")
+# print(file.read())
+# print("Finished")
+# file.close()
+
+
+# Fill in the blanks to open a file, read 
+# its content and print its length.
+
+# file = open("filename.txt", "r")
+# str = file.read()
+# print(len(str))
+# file.close()
+
+#------------------------------- .readlines()--------------------------------
+
+# file = open("filename.txt", "r")
+# print(file.readlines())
+# file.close()
+
+# Output
+# ['Some text in txt file on first line\n', 'Another text in text file on second line'] 
+
+# ------------------------iterate through the lines in the file --------------------
+
+# file = open("filename.txt", "r")
+# for line in file:
+#     print(line)
+# 
+# file.close()
+
+# print(len(open("filename.txt").readlines()))
+
+# file = open("newfile.txt", "w")#-----------------  The   "w"   mode will create a file
+# file.write("This has been written to a file")
+# file.close()
+# 
+# file = open("newfile.txt", "r")
+# print(file.read())
+# file.close()
+
+
+# ------------ откроем прочитаем 
+
+
+# file = open("newfile.txt", "r")
+# print("Reading initial contents")
+# print(file.read())
+# print("Finished")
+# file.close()
+# 
+# file = open("newfile.txt", "w") # Тут файл создастся либо удалится старый -------
+# file.write("Some new text")
+# file.close()
+# 
+# file = open("newfile.txt", "r")
+# print("Reading new contents")
+# print(file.read())
+# print("Finished")
+# file.close()
+
+#---------------- .write return numbers of bytes written to a file----------------
+
+# msg = "Hello world!"
+# file = open("newfile.txt", "w")
+# amount_written = file.write(msg)#  ---------------  return: 12 -------------------
+# print("lenght of message", len(msg))# ------------  12
+# print(file.write(msg) == len(msg)) #  ------------  True
+# print(amount_written)
+# file.close()
+
+# try:# ------------------------- Попробуй, тут может быть ошибка
+#    f = open("filename.txt")
+#    print(f.read())
+#    print(1 / 0) # --- ERROR ---
+# finally:# --------------------- И наконец
+#    f.close()# ----------------- Закрой уже файл 
+

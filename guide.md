@@ -267,7 +267,9 @@ file.close()
 ## Reading Files
 
 Не забудь переключить терминал в **рабочую директорию** чтобы работать с фалами.  
-The contents of a file that has been opened in text mode can be read using the read method.
+
+The contents of a file that has been opened in  
+text mode can be read using the read method.  
 
 ```py
 file = open("filename.txt", "r")
@@ -275,3 +277,123 @@ cont = file.read()
 print(cont)
 file.close()
 ```
+
+To read only a certain amount of a file, you can provide a number as an argument to the read function. This determines the number of bytes that should be read.
+You can make more calls to read on the same file object to read more of the file byte by byte. With no argument, read returns the rest of the file.
+
+```py
+file = open("filename.txt", "r")
+print(file.read(16))
+print(file.read(4))
+print(file.read(4))
+print(file.read())
+file.close()
+```
+
+*Just like passing no arguments, negative values will return the entire contents.*
+
+After all contents in a file have been read, any attempts to read further from that file will return an empty string, because you are trying to read from the end of the file.  
+
+```py
+file = open("filename.txt", "r")
+file.read()
+print("Re-reading")
+print(file.read())
+print("Finished")
+file.close()
+```
+
+To retrieve each line in a file, you can use the readlines method to return a list in which each element is a line in the file.
+
+**For example:**
+
+```py
+file = open("filename.txt", "r")
+print(file.readlines())
+file.close()
+```
+
+You can also use a **for** loop to iterate through the lines in the file:
+
+```py
+file = open("filename.txt", "r")
+
+for line in file:
+    print(line)
+
+file.close()
+```
+
+*In the output, the lines are separated by blank lines, as the print function automatically adds a new line at the end of its output.*
+
+## Writing Files
+
+To write to files you use the write method, which writes a string to the file.  
+**For example:**
+
+```py
+file = open("newfile.txt", "w")
+file.write("This has been written to a file")
+file.close()
+
+file = open("newfile.txt", "r")
+print(file.read())
+file.close()
+```
+
+Программа создаст новый файл newfile.txt и запишет в него текст в аргументе.  
+При повторном запуске программа опять создаст новый файл и т.д.
+
+*The "w" mode will create a file, if it does not already exist.*
+
+### When a file is opened in write mode, the file's **existing content is deleted**
+
+```py
+file = open("newfile.txt", "r")
+print("Reading initial contents")
+print(file.read())
+print("Finished")
+file.close()
+
+file = open("newfile.txt", "w")
+file.write("Some new text")
+file.close()
+
+file = open("newfile.txt", "r")
+print("Reading new contents")
+print(file.read())
+print("Finished")
+file.close()
+```
+
+### The write method returns the number of bytes written to a file, if successful  
+
+```py
+msg = "Hello world!"
+file = open("newfile.txt", "w")
+amount_written = file.write(msg)
+print(amount_written)
+file.close()
+```
+
+**Result:**  
+
+```py
+12
+```
+
+*To write something other than a string, it needs to be converted to a string first.*  
+
+## Working With Files  
+
+It is good practice to avoid wasting resources by making sure that files are always closed after they have been used. One way of doing this is to use try and finally.
+
+```py
+try:
+   f = open("filename.txt")
+   print(f.read())
+finally:
+   f.close()
+```
+
+*This ensures that the file is always closed, even if an error occurs.*
