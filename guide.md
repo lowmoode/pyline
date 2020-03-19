@@ -257,7 +257,7 @@ open("filename.txt", "wb")
 
 You can use the + sign with each of the modes above to give them extra access to files. For example, r+ opens the file for both reading and writing.  
 
-Once a file has been opened and used, you should close it.
+Once a file has been opened and used, **you should close it**.
 This is done with the close method of the file object.
 
 ```py
@@ -397,3 +397,125 @@ finally:
 ```
 
 *This ensures that the file is always closed, even if an error occurs.*
+
+
+An alternative way of doing this is using with statements. This creates a temporary variable (often called f), which is only accessible in the indented block of the with statement.
+
+```py
+with open ("filename.txt")as f:
+   print(f.read())
+```
+
+*The file is automatically closed at the end of the with statement, even if exceptions occur within it.*
+
+## More Types
+
+* None
+* Dictionaries
+* Tuples
+* List Slices
+* List Comprehensions
+* String Formatting
+* Useful Functions
+* Text Analyzer
+
+### None
+
+The None object is used to represent the absence of value.  
+It is similar to **null** in other programming languages.  
+Like other "empty" values, such as 0, [] and the empty string, it is  
+**False** when converted to a Boolean variable.  
+When entered at the Python console, it is displayed as the empty strin.
+
+```py
+>>> None == None
+True
+>>> None
+>>> print(None)
+None
+>>>
+```
+
+The **None** object is returned by any function that doesn't explicitly  
+return anything else.
+
+```py
+def some_func():
+   print("Hi")
+
+var = some_func()
+print(var)
+```
+
+**Result:**
+
+```py
+Hi
+None
+```
+
+### Dictionaries
+
+**Dictionaries** are data structures used to map arbitraty keys to values.  
+List can be thought of as dictionaries with integer keys within a certain range.  
+Dictionaries can by indexed in the same way as lists, using **square brakets** containing keys.
+**Example:**
+
+```py
+ages = {"Dave": 24, "Mary": 42, "John": 58}
+print(ages["Dave"])
+print(ages["Mary"])
+```
+
+**Result:**
+
+```py
+24
+42
+```
+
+*Each element in a dictionary is represented by a **key:value** pair*
+
+Trying to index a key that isn't part of the dictionary returns a **KeyError**.  
+**Example:**
+
+```py
+primary = {
+   "red":[255,0,0]
+   "green":[0,255,0]
+   "blue":[0,0,255]
+}
+
+print(primary["red"])
+print(primary["yellow"])
+```
+
+**Result:**
+
+```py
+[255,0,0]
+
+KeyError.'yellow'
+```
+
+As you can see, a dictionary can store any types of data as values.
+*An empty dictionary is defined as {}.*
+
+Only **immutable** objects can be used as keys to dictionaries. Immutable objects are those that can't be changed. So far, the only mutable objects you've come across are **lists** and **dictionaries.**  
+Trying to use a mutable objects as a dictionary ky causes a **TypeError.**
+
+```py
+bad_dict = {
+   [1,2,3]: "one two three",
+}
+```
+
+**Result:**
+
+```py
+TypeError: unhasable type: 'list'
+```
+
+
+
+

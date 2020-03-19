@@ -142,7 +142,7 @@ from math import pi, sqrt     # another standart module
 # file.close()
 
 
-# ------------ откроем прочитаем 
+# ------------ откроем прочитаем --------------------
 
 
 # file = open("newfile.txt", "r")
@@ -177,4 +177,18 @@ from math import pi, sqrt     # another standart module
 #    print(1 / 0) # --- ERROR ---
 # finally:# --------------------- И наконец
 #    f.close()# ----------------- Закрой уже файл 
+
+# with open("filename.txt") as f:#---- метод __exit__ уже встроен-----
+#    print(f.read())
+
+
+#What is the highest number that would be printed by this code?
+
+#try:
+#  print(1)
+#  assert 2 + 2 == 5
+#except AssertionError:
+#  print(3)
+#except:# ----- Не сработает потому что исключения все закончились
+#  print(4)
 
