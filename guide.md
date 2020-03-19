@@ -398,7 +398,6 @@ finally:
 
 *This ensures that the file is always closed, even if an error occurs.*
 
-
 An alternative way of doing this is using with statements. This creates a temporary variable (often called f), which is only accessible in the indented block of the with statement.
 
 ```py
@@ -516,6 +515,42 @@ bad_dict = {
 TypeError: unhasable type: 'list'
 ```
 
+Just like lists, dictionary keys can be assigned to different values.
+However, unlike lists, a new dictionary key can also be assigned a value, not just ones that already exist.
 
+```py
+squares = {1:1, 2:4, 3:"error", 4:16}
+squares[8] = 64
+squares[3] = 9
+print(squares)
+```
 
+**Result:**
 
+```py
+{1:1, 2:4, 3:9, 4:16, 8:64}
+```
+
+To determine whether a key is in a dictionary, you can use in and not in, just as you can for a list.  
+**Example:**
+
+```py
+nums = {
+   1:"one",
+   2:"two",
+   3:"three"
+}
+print(1 in nums)
+print("three" in nums)
+print(4 not in nums)
+```
+
+**Result:**
+
+```py
+True
+False
+True
+```
+
+### Dictionary .get
