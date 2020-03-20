@@ -184,11 +184,11 @@ from math import pi, sqrt     # another standart module
 
 #What is the highest number that would be printed by this code?
 
-#try:
-#  print(1)
-#  assert 2 + 2 == 5
-#except AssertionError:
-#  print(3)
-#except:# ----- Не сработает потому что исключения все закончились
-#  print(4)
+# try:
+#   print(1)
+#   assert 2 + 2 == 5
+# except AssertionError:
+#   print(3)
+# except:# ----- Не сработает потому что исключения все закончились
+#   print(4)
 
