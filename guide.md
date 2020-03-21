@@ -553,4 +553,83 @@ False
 True
 ```
 
-### Dictionary .get
+#### Dictionary .get
+
+A useful dictionary method is **get**. It does the same thing as indexing, but if the key is not found in the dictionary it returns another specified value instead ('None', by default).  
+**Example:**
+
+```py
+parirs = {
+   1: "apple",
+   "orange":[2,3,4],
+   True: False,
+   None: "True",
+}
+
+print(paris.get("orange"))
+print(pairs.get(7))
+print(pairs.get(12345, "not in dictionary"))
+```
+
+**Result:**
+
+```bash
+>>>
+[2,3,4]
+None # --------------- By Default Value None
+not in dictionary
+>>>
+```
+
+## Tuples
+
+Tuples are very similar to lists, except that they are immutable (they cannot be changed).  
+Also, they are created using parentheses, rather than square brackets.  
+**Example:**
+
+```py
+words = ("spam", "eggs", "sausages",)
+```
+
+You can access the value in the tuple with their index, just as you did with lists:
+
+```py
+print(words[0])
+```
+
+Trying to reassign a value in a tuple causes a TypeError.
+
+```py
+word[1] = "cheese"
+```
+
+```bash
+>>>
+TypeError. 'tuple' object does not support item assignment
+>>>
+```
+
+*Like lists and dictionaries, tuples can be nested within each other.*
+Tuples can be created without the parentheses, by just separating the values with commas.  
+**Example:**
+
+```py
+my_tuple = "one", "two", "three"
+print(my_tuple[0])
+```
+
+**Result:**
+
+```bash
+>>>
+one
+>>>
+```
+
+An empty tuple is created using an empty parenthesis pair.
+
+```py
+tpl = ()
+```
+
+*Tuples are faster than lists, but they cannot be changed.*
