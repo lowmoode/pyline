@@ -209,3 +209,14 @@ from math import pi, sqrt     # another standart module
 
 # tuple = (1, (1,2,3))
 # print(tuple[1])
+
+# ---------- Можно указать индекс за пределами списка -----
+
+# list = ["a", "b", "c", "d"]
+# a = list[0:5]
+# print(a)
+
+# What is the output of this code?
+sqs = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(sqs[8:5:-1])
+# Result: --------------- [64, 49, 36]
