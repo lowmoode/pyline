@@ -638,6 +638,7 @@ tpl = ()
 
 List slices provide a more advanced way of retrieving values from a list. Basic list slicing involves indexing a list with two colon-separated integers. This returns a new list containing all the values in the old list between the indices.  
 **Example:**
+
 ```py
 squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 print(squares[2:6])
@@ -708,3 +709,179 @@ print(squares[1:-1])
 Using [::-1] as a slice is a common and idiomatic way to reverse a list.*
 
 ## List Comprehensions
+
+List comprehensions are a useful way of quickly creating lists whose contents obey a simple rule.
+For example, we can do the following:
+
+```py
+# a list comprehension
+cubes = [i**3 for i in range(5)]
+print(cubes)
+```
+
+**Result:**
+
+```py
+[0, 1, 8, 27, 64]
+```
+
+*List comprehensions are inspired by set-builder notation in mathematics.*
+
+Question:  
+What does this list comprehension create?
+nums = [i*2 for i in range(10)]
+
+Answer:
+A list between 0 and 18.  
+
+A list comprehension can also contain an if statement to enforce a condition on values in the list.  
+**Example:**
+
+```py
+evens = [i**2 for i in range(10) if i**2 % 2 ==0]
+print(evens)
+```
+
+**Result**
+
+```bash
+[0, 4, 16, 36, 64]
+```
+
+Trying to create a list in a very extensive range will result in a **MemoryError**.
+This code shows an example where the list comprehension runs out of memory.
+
+```py
+even = [2*i for i in range(10**100)]
+
+# Result:
+
+>>>
+MemoryError
+>>>
+```
+
+*This issue is solved by generators, which are covered in the next module.*  
+
+## String Formatting
+
+So far, to combine strings and non-strings, you've converted the non-strings to strings and added them.
+String formatting provides a more powerful way to embed non-strings within strings. String formatting uses a string's format method to substitute a number of arguments in the string.  
+**Example:**
+
+```py
+# strin formatting
+nums = [4, 5, 6]
+msg = "Numbers: {0} {1} {2}".format(nums[0], nums[1], nums[2])
+print(msg)
+
+#Result
+>>>
+Numbers: 4 5 6
+>>>
+```
+
+*Each argument of the format function is placed in the string at the corresponding position, which is determined using the curly braces { }.*  
+
+String formatting can also be done with named arguments.  
+**Example:**
+
+```py
+a = "{x}, {y}".format(x=5, y=12)
+print(a)
+
+# Result:
+>>>
+5, 12
+>>>
+```
+
+## Useful Functions
+
+Python contains many useful built-in functions and methods to accomplish common tasks.  
+
+### String Functions
+
+**join** - joins a list of strings with another string as a separator.  
+**replace** - replaces one substring in a string with another.  
+**startswith** and **endswith** - determine if there is a substring at the start and end of a string, respectively.  
+To change the case of a string, you can use **lower** and **upper**.  
+The method **split** is the opposite of join, turning a string with a certain separator into a list.  
+**Some examples:**
+
+```py
+print(", ".join(["spam", "eggs", "ham"])) # list --> string
+#prints "spam, eggs, ham"
+
+print("Hello ME".replace("ME", "world"))
+#prints "Hello world"
+
+print("This is a sentence.".startswith("This"))
+# prints "True"
+
+print("This is a sentence.".endswith("sentence."))
+# prints "True"
+
+print("This is a sentence.".upper())
+# prints "THIS IS A SENTENCE."
+
+print("AN ALL CAPS SENTENCE".lower())
+#prints "an all caps sentence"
+
+print("spam, eggs, ham".split(", ")) # string --> list
+#prints "['spam', 'eggs', 'ham']"
+```
+
+### Numeric Functions
+
+To find the maximum or minimum of some numbers or a list, you can use **max** or **min**.  
+To find the distance of a number from zero (its absolute value), use **abs**.  
+To round a number to a certain number of decimal places, use **round**.  
+To find the total of a list, use **sum**.  
+**Some examples:**  
+
+```py
+print(min(1, 2, 3, 4, 0, 2, 1))
+# prints: "0"
+print(max([1, 4, 9, 2, 5, 6, 8]))
+# prints: "9"
+print(abs(-99))
+# prints: "99"
+print(abs(42))
+# prints: "42"
+print(sum([1, 2, 3, 4, 5]))
+# prints: "15"
+```
+
+### List Functions
+
+Often used in conditional statements, **all** and any **take** a list as an argument, and return **True** if all or any (respectively) of their arguments evaluate to **True** (and **False** otherwise).  
+The function **enumerate** can be used to iterate through the values and indices of a list simultaneously.  
+**Example:**
+
+```py
+nums = [55, 44, 33, 22, 11]
+
+if all([i > 5 for i in nums]):
+   print("All larger than 5")
+
+if any([i % 2 == 0 for i in nums]):
+   print("At least one is even")
+
+for v in enumerate(nums):
+   print(v)
+
+# Result:
+
+>>>
+All larger than 5
+At least one is even
+(0, 55)
+(1, 44)
+(2, 33)
+(3, 22)
+(4, 11)
+>>>
+```
+
+## Text Analyzer

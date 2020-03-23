@@ -217,6 +217,36 @@ from math import pi, sqrt     # another standart module
 # print(a)
 
 # What is the output of this code?
-sqs = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-print(sqs[8:5:-1])
+
+# sqs = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+# print(sqs[8:5:-1])
 # Result: --------------- [64, 49, 36]
+
+# ----------------------- List Comprehensions ----------------
+
+# cubes = [i**3 for i in range(5)]
+# print(cubes)
+
+# -------------- List Comprehensions if statment  ------------
+
+
+# evens  = [i**2 for i in range(10) if i**2 % 2 ==0]
+# evens2 = [i**2 for i in range(10)]
+# print(evens2, "\n", evens)
+
+#Create a list of multiples of 3 from 0 to 20.
+
+# a = [i for i in range(20) if i % 3 == 0]
+# print(a)
+
+# nums = [4, 5, 6]
+# msg = "Numbers: {0} {1} {2}".format(nums[0], nums[1], nums[2])
+# print(msg)
+
+#--- String formatting can also be done with named arguments --
+
+# a = "{x}, {y}".format(x=5, y=12)
+# print(a)
+
+
+
