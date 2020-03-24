@@ -1,29 +1,29 @@
 from random import randint  # standart module
 from math import pi, sqrt     # another standart module
- 
+
 
 # print range from 0 to 100 by 5 step or 100 / 5 = 20 items
-# print(list(range(0, 100, 5))) 
+# print(list(range(0, 100, 5)))
 
-#-------------Docstrings----------------------------------------------------
+# -------------Docstrings----------------------------------------------------
 
-#   def shout(word):  
-#       """  
-#       Print a word with an  
-#       exclamation mark following it.  
-#       """  
-#       print(word + "!")  
-# 
+#   def shout(word):
+#       """
+#       Print a word with an
+#       exclamation mark following it.
+#       """
+#       print(word + "!")
+#
 # Docstrings retained throughout the runtime of the program
 
 # def printWord(word):
 #     print(word)
-# 
+#
 # neWord = printWord
 # neWord("hello") # print hello in terminal
 
 
-#for i in range(5):
+# for i in range(5):
 #    value = randint(1,100)
 #    print(value)
 
@@ -35,17 +35,16 @@ from math import pi, sqrt     # another standart module
 # except ZeroDivisionError:
 #    print("An error occurred due to zero division") # Result
 
- 
 
-#try:
+# try:
 #  num1 = input(":")
 #  num2 = input(":")
 #  print(float(num1)/float(num2))
-# 
-#except:
+#
+# except:
 #  print("Invalid input")
 
-#____________________________Raising Exceptions________________________________
+# ____________________________Raising Exceptions________________________________
 
 # print(1)
 # raise ValueError
@@ -55,9 +54,9 @@ from math import pi, sqrt     # another standart module
 # raise NameError("Invalid name!")
 
 #num = input(":")
-#if float(num)<0: 
+# if float(num)<0:
 #    raise ValueError("Negative!")
-#else:
+# else:
 #    print("good boy!")
 
 # try:
@@ -67,7 +66,7 @@ from math import pi, sqrt     # another standart module
 #     print("An error occurred")
 #     raise
 
-#__________________________________Assertions______________________________
+# __________________________________Assertions______________________________
 
 # print(1)
 # assert 2 + 2 == 4
@@ -75,13 +74,13 @@ from math import pi, sqrt     # another standart module
 # assert 1 + 1 == 3
 # print(3)
 
-# Assertions can be caught and handled like any other exception using the 
+# Assertions can be caught and handled like any other exception using the
 # try-except statement
 
-#try:
+# try:
 #    temp = -10
 #    assert (temp >= 0), "Colder than absolute zero!"
-#except:
+# except:
 #     print ("cold")
 
 # _________________________________Открытие и чтение файла____________________________
@@ -106,7 +105,7 @@ from math import pi, sqrt     # another standart module
 # file.close()
 
 
-# Fill in the blanks to open a file, read 
+# Fill in the blanks to open a file, read
 # its content and print its length.
 
 # file = open("filename.txt", "r")
@@ -114,21 +113,21 @@ from math import pi, sqrt     # another standart module
 # print(len(str))
 # file.close()
 
-#------------------------------- .readlines()--------------------------------
+# ------------------------------- .readlines()--------------------------------
 
 # file = open("filename.txt", "r")
 # print(file.readlines())
 # file.close()
 
 # Output
-# ['Some text in txt file on first line\n', 'Another text in text file on second line'] 
+# ['Some text in txt file on first line\n', 'Another text in text file on second line']
 
 # ------------------------iterate through the lines in the file --------------------
 
 # file = open("filename.txt", "r")
 # for line in file:
 #     print(line)
-# 
+#
 # file.close()
 
 # print(len(open("filename.txt").readlines()))
@@ -136,7 +135,7 @@ from math import pi, sqrt     # another standart module
 # file = open("newfile.txt", "w")#-----------------  The   "w"   mode will create a file
 # file.write("This has been written to a file")
 # file.close()
-# 
+#
 # file = open("newfile.txt", "r")
 # print(file.read())
 # file.close()
@@ -150,18 +149,18 @@ from math import pi, sqrt     # another standart module
 # print(file.read())
 # print("Finished")
 # file.close()
-# 
+#
 # file = open("newfile.txt", "w") # Тут файл создастся либо удалится старый -------
 # file.write("Some new text")
 # file.close()
-# 
+#
 # file = open("newfile.txt", "r")
 # print("Reading new contents")
 # print(file.read())
 # print("Finished")
 # file.close()
 
-#---------------- .write return numbers of bytes written to a file----------------
+# ---------------- .write return numbers of bytes written to a file----------------
 
 # msg = "Hello world!"
 # file = open("newfile.txt", "w")
@@ -176,13 +175,13 @@ from math import pi, sqrt     # another standart module
 #    print(f.read())
 #    print(1 / 0) # --- ERROR ---
 # finally:# --------------------- И наконец
-#    f.close()# ----------------- Закрой уже файл 
+#    f.close()# ----------------- Закрой уже файл
 
 # with open("filename.txt") as f:#---- метод __exit__ уже встроен-----
 #    print(f.read())
 
 
-#What is the highest number that would be printed by this code?
+# What is the highest number that would be printed by this code?
 
 # try:
 #   print(1)
@@ -200,7 +199,7 @@ from math import pi, sqrt     # another standart module
 #    True: False,
 #    None: "True",
 # }
-# 
+#
 # print(pairs.get("orange"))
 # print(pairs.get(7))
 # print(pairs.get(12345, "not in dictionary"))
@@ -234,7 +233,7 @@ from math import pi, sqrt     # another standart module
 # evens2 = [i**2 for i in range(10)]
 # print(evens2, "\n", evens)
 
-#Create a list of multiples of 3 from 0 to 20.
+# Create a list of multiples of 3 from 0 to 20.
 
 # a = [i for i in range(20) if i % 3 == 0]
 # print(a)
@@ -243,10 +242,34 @@ from math import pi, sqrt     # another standart module
 # msg = "Numbers: {0} {1} {2}".format(nums[0], nums[1], nums[2])
 # print(msg)
 
-#--- String formatting can also be done with named arguments --
+# --- String formatting can also be done with named arguments --
 
 # a = "{x}, {y}".format(x=5, y=12)
 # print(a)
 
+# ----------- Text Analyzer ---------
+
+# function iterate by character in file text
+# def count_char(text, char):
+#     count = 0
+#     for c in text:
+#         if c == char:
+#             count += 1
+#     return count
+# 
+# 
+# # safely open a file with the specified name
+# filename = input("Enter a filename: ")
+# with open(filename) as f:
+#     text = f.read()
+# 
+# # iterate by alphabet & use func count_char & print Result
+# for char in "abcdefghijklmnopqrstuvwxyz":
+#     perc = 100 * count_char(text, char) / len(text)
+#     print("{0} - {1}%".format(char, round(perc, 2)))
 
 
+# What is the result of this code?
+nums = (55, 44, 33, 22)
+print(max(min(nums[:2]), abs(-42)))
+# Result: 44
