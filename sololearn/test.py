@@ -270,6 +270,24 @@ from math import pi, sqrt     # another standart module
 
 
 # What is the result of this code?
-nums = (55, 44, 33, 22)
-print(max(min(nums[:2]), abs(-42)))
+# nums = (55, 44, 33, 22)
+# print(max(min(nums[:2]), abs(-42)))
 # Result: 44
+
+# ==================== Functional Programming =================
+
+# What is the output of this code?
+# def test(func, arg):
+#   return func(func(arg))
+# 
+# def mult(x):
+#   return x * x
+# 
+# print(test(mult, 2))
+# Result:  16
+
+# --- pure functions
+
+def pure_function(x, y):
+  temp = x + 2*y
+  return temp / (2*x + y)
