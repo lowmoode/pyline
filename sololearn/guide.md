@@ -1029,3 +1029,55 @@ The **main disadvantage** of using only pure functions is that they majorly comp
 They can also be more difficult to write in some situations.
 
 ## Lambdas
+
+Creating a function normally (using **def**) assigns it to a variable automatically.
+This is different from the creation of other objects - such as strings and integers - which can be created on the fly, without assigning them to a variable.
+The same is possible with functions, provided that they are created using lambda syntax. Functions created this way are known as **anonymous**.
+This approach is most commonly used when passing a simple function as an argument to another function. The syntax is shown in the next example and consists of the lambda keyword followed by a list of arguments, a colon, and the expression to evaluate and return.
+
+```py
+def my_func(f, arg)
+   return f(arg)
+my_func(lambda x: 2*x*x, 5) # First argument is lambda function
+```
+
+*Lambda functions get their name from lambda calculus, which is a model of computation invented by Alonzo Church.*
+
+Lambda functions aren't as powerful as named functions.
+They can only do things that require a single expression - usually equivalent to a single line of code.  
+**Example:**
+
+```py
+# named function
+def polynomial(x):
+   return x**2 + 5 * x + 4
+print(polinomial(-4))
+
+# OR Lambda
+
+print((lambda x: x**2 + 5*x + 4)(-4))
+
+#Result:
+>>>
+0
+0
+>>>
+```
+
+*In the code above, we created an anonymous function on the fly and called it with an argument.*  
+
+Lambda functions can be assigned to variables, and used like normal functions.
+
+```py
+double = lambda x: x * 2
+print(double(7))
+
+# Result:
+>>>
+14
+>>>
+```
+
+*However, there is rarely a good reason to do this - it is usually better to define a function with def instead.*  
+
+## Map & Filter

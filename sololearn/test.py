@@ -256,13 +256,13 @@ from math import pi, sqrt     # another standart module
 #         if c == char:
 #             count += 1
 #     return count
-# 
-# 
+#
+#
 # # safely open a file with the specified name
 # filename = input("Enter a filename: ")
 # with open(filename) as f:
 #     text = f.read()
-# 
+#
 # # iterate by alphabet & use func count_char & print Result
 # for char in "abcdefghijklmnopqrstuvwxyz":
 #     perc = 100 * count_char(text, char) / len(text)
@@ -279,15 +279,18 @@ from math import pi, sqrt     # another standart module
 # What is the output of this code?
 # def test(func, arg):
 #   return func(func(arg))
-# 
+#
 # def mult(x):
 #   return x * x
-# 
+#
 # print(test(mult, 2))
 # Result:  16
 
 # --- pure functions
 
 def pure_function(x, y):
-  temp = x + 2*y
-  return temp / (2*x + y)
+    temp = x + 2*y
+    return temp / (2*x + y)
+
+
+print(pure_function(8, 200))

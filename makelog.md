@@ -1,9 +1,9 @@
 
 # MakeLog
 
-===
+Здесь я веду  записи по установке ПО, модуле и прочие рабочие записи.
 
-## Установка Virtual Evnironments for Brewed Python
+## Установка Virtual Evnironments for Brewed Python on Mac OS
 
  Установка python
 
