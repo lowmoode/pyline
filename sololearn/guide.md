@@ -1049,7 +1049,7 @@ They can only do things that require a single expression - usually equivalent to
 
 ```py
 # named function
-def polynomial(x):
+def polynomial(x):   # англ. многочлен
    return x**2 + 5 * x + 4
 print(polinomial(-4))
 
