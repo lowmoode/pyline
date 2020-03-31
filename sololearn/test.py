@@ -1,5 +1,5 @@
-from random import randint  # standart module
-from math import pi, sqrt     # another standart module
+# from random import randint  # standart module
+# from math import pi, sqrt     # another standart module
 
 
 # print range from 0 to 100 by 5 step or 100 / 5 = 20 items
@@ -288,9 +288,44 @@ from math import pi, sqrt     # another standart module
 
 # --- pure functions
 
-def pure_function(x, y):
-    temp = x + 2*y
-    return temp / (2*x + y)
+# def pure_function(x, y):
+#     temp = x + 2*y
+#     return temp / (2*x + y)
+#
+#
+# print(pure_function(8, 200))
 
+# --- Map (func, arument) --> [list] ----
 
-print(pure_function(8, 200))
+# def add_five(x):
+#     return x + 5
+#
+# nums = [11, 22, 33, 44, 55]
+# result  = list(map(add_five, nums)) # func and list as argument
+# print(result) # --------------------- Return new iterable
+# # ----------------------------------- with the function
+# #                                     applied to each argument
+
+# Map with lambda syntax
+
+# nums = [11, 22, 33, 44, 55]
+# 
+# result = list(map(lambda x: x + 5, nums))
+# print(result) 
+# Result [16, 27, 38, 49, 60]
+
+# ----------------------- Filter --------------------
+
+# nums = [11, 22, 33, 44, 55]
+# res = list(filter(lambda x: x % 2 == 0, nums))
+# print(res) # Result: [22, 44]
+
+def countdown():
+    i = 5
+    while i > 0:
+        yield i
+        i -= 1
+
+for i in countdown():
+    print(i)
+

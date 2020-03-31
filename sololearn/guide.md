@@ -1081,3 +1081,91 @@ print(double(7))
 *However, there is rarely a good reason to do this - it is usually better to define a function with def instead.*  
 
 ## Map & Filter
+
+The built-in functions **map** and **filter** are very useful higher-order functions that operate on lists (or similar objects called **iterables**).
+
+### Map
+
+The function **map** takes a function and an iterable as arguments, and returns a new iterable with the function applied to each argument.
+
+**Example:**  
+
+```py
+def add_five(x):
+   return x + 5
+
+nums = [11, 22, 33, 44, 55]
+resutl = list(map (add_five, nums))
+print(result)
+
+# Result
+>>>
+[16, 27, 38, 49, 60]
+>>>
+```
+
+We could have achieved the same result more easily by using lambda syntax.
+
+```py
+nums = [11, 22, 33, 44, 55]
+
+result = list(map(lambda x: x + 5, nums))
+print(result)
+
+# Resutl
+>>>
+[16, 27, 38, 49, 60]
+>>>
+```
+
+*To convert the result into a list, we used list explicitly.*
+
+### Filter
+
+The function **filter** filters an iterable by removing items that don't match a predicate (a function that returns a Boolean).
+
+**Example:**
+
+```py
+nums = [11, 22, 33, 44, 55]
+res = list(filter(lambda x: x % 2 == 0, nums))
+print(res)
+
+# Result:
+>>>
+[22, 44]
+>>>
+```
+
+*Like **map**, the result has to be explicitly (явно) converted to a list if you want to print it.*
+
+## Generators
+
+Generators are a type of iterable, like lists or tuples.
+Unlike lists, they don't allow indexing with arbitrary indices, but they can still be iterated through with **for** loops.
+They can be created using functions and the **yield** statement.
+
+**Example:**
+
+```py
+def countdown():
+    i = 5
+    while i > 0:
+        yield i # -- англ гл. уступать
+        i -= 1
+
+for i in countdown():
+    print(i)
+
+# Result:
+>>>
+5
+4
+3
+2
+1
+>>>
+```
+
+*The **yield** statement is used to define a generator, replacing the return of a function to provide a result to its caller without destroying local variables.
+*
