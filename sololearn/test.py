@@ -357,16 +357,20 @@ def decor(func):
         print("=========")
     return wrap
 
-# def print_text():
-#     print("Hello world!")
+# --------- Так неудобно исп. декоратор ------------- 
 
-# decorated = decor(print_text)
-# decorated()
+    # def print_text():
+    #     print("Hello world!")
 
-# def print_text():
-#     print("Hello Lord!")
-# 
-# print_text = decor(print_text)
+    # decorated = decor(print_text)
+    # decorated()
+
+    # def print_text():
+    #     print("Hello Lord!")
+    # 
+    # print_text = decor(print_text)
+
+# -------------- А так гораздо лучше ----------------
 
 @decor # ---------------- не надо лишний раз объявлять переменные
 def print_text():
