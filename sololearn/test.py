@@ -320,12 +320,57 @@
 # res = list(filter(lambda x: x % 2 == 0, nums))
 # print(res) # Result: [22, 44]
 
-def countdown():
-    i = 5
-    while i > 0:
-        yield i
-        i -= 1
+# def countdown():
+#     i = 5
+#     while i > 0:
+#         yield i
+#         i -= 1
+# 
+# for i in countdown():
+#     print(i)
 
-for i in countdown():
-    print(i)
+# -------------- Generators or Lazy (on demand)-------
+
+# infinite yield --> to stop press Ctrl + с in Windows
+
+# def infinite_sevens():
+#     while True:
+#         yield 7
+# 
+# for i in infinite_sevens():
+#     print(i)
+
+ 
+# def numbers(x):
+#     for i in range(x):
+#         if i % 2 == 0:
+#             yield i
+# 
+# print(list(numbers(1000)))
+
+# ------------------------ Decorators -----------------
+
+def decor(func):
+    def wrap():
+        print("=========")
+        func()
+        print("=========")
+    return wrap
+
+# def print_text():
+#     print("Hello world!")
+
+# decorated = decor(print_text)
+# decorated()
+
+# def print_text():
+#     print("Hello Lord!")
+# 
+# print_text = decor(print_text)
+
+@decor # ---------------- не надо лишний раз объявлять переменные
+def print_text():
+    print("Helllllow my Lord!")
+
+print_text() # --- Просто вызываем функцию а декоратор уже внутри
 

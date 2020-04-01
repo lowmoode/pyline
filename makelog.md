@@ -59,3 +59,5 @@ pip install numpy
 ```bash
 deactivate
 ```
+
+## Установка Virtual Evnironments на Windows
