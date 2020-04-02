@@ -372,9 +372,25 @@ def decor(func):
 
 # -------------- А так гораздо лучше ----------------
 
-@decor # ---------------- не надо лишний раз объявлять переменные
-def print_text():
-    print("Helllllow my Lord!")
+# @decor # ---------------- не надо лишний раз объявлять переменные
+# def print_text():
+#     print("Helllllow my Lord!")
+# 
+# print_text() # --- Просто вызываем функцию а декоратор уже внутри
 
-print_text() # --- Просто вызываем функцию а декоратор уже внутри
+# ---------------- Recursion -------------------
 
+# def factorial(x):
+#     if x == 1:
+#         return 1
+#     else:
+#         return x * factorial(x - 1)
+# 
+# print(factorial(5)) # Result: 120
+
+# ------- RecursionError:  maximum recursion depth exceeded
+
+# def factorial(x):
+#      return x * factorial(x - 1) 
+# 
+# factorial(5)
