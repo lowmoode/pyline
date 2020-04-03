@@ -1271,9 +1271,9 @@ def factorial(x):
     if x == 1:
         return 1
     else:
-        return x * factorial(x - 
+        return x * factorial(x -1)
 
-print(factorial(5)) 
+print(factorial(5))
 
 # Result: 120
 ```
@@ -1286,11 +1286,47 @@ Below is an incorrect version of the factorial function. It has no base case, so
 
 ```py
 def factorial(x):
-     return x * factorial(x - 1) 
-# 
+     return x * factorial(x - 1)
+
 factorial(5)
 
-# Result: 
+# Result:
 RuntimeError: maximum recursion depth exceeded
 ```
 
+Recursion can also be indirect. One function can call a second, which calls the first, which calls the second, and so on. This can occur with any number of functions.  
+**Example:**
+
+```py
+def is_even(x):
+    if x == 0:
+        return True
+    else:
+        return is_odd(x - 1)
+
+def is_odd(x):
+    return not is_even(x)
+
+    print(is_odd(17))
+    print(is_even(23))
+
+# Result
+True
+False
+```
+
+## Sets
+
+---
+
+**Sets** are data structures, similar to lists or dictionaries. They are created using curly braces, or the **set function**. They share some functionality with lists, such as the use of in to check whether they contain a particular item.
+
+```py
+num_set = {1, 2, 3, 4, 5}
+word_set = set(["spam", "eggs", "sausage"])
+
+print(3 in num_set) # True
+print("spam" not in word_set) # False
+```
+
+*To create an empty set, you must use set(), as {} creates an empty dictionary.*
