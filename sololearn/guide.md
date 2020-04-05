@@ -1028,7 +1028,7 @@ Pure functions are:
 The **main disadvantage** of using only pure functions is that they majorly complicate the otherwise simple task of I/O, since this appears to inherently require side effects.
 They can also be more difficult to write in some situations.
 
-## Lambdas
+### Lambdas
 
 Creating a function normally (using **def**) assigns it to a variable automatically.
 This is different from the creation of other objects - such as strings and integers - which can be created on the fly, without assigning them to a variable.
@@ -1080,11 +1080,11 @@ print(double(7))
 
 *However, there is rarely a good reason to do this - it is usually better to define a function with def instead.*  
 
-## Map & Filter
+### Map & Filter
 
 The built-in functions **map** and **filter** are very useful higher-order functions that operate on lists (or similar objects called **iterables**).
 
-### Map
+#### Map
 
 The function **map** takes a function and an iterable as arguments, and returns a new iterable with the function applied to each argument.
 
@@ -1120,7 +1120,7 @@ print(result)
 
 *To convert the result into a list, we used list explicitly.*
 
-### Filter
+#### Filter
 
 The function **filter** filters an iterable by removing items that don't match a predicate (a function that returns a Boolean).
 
@@ -1139,7 +1139,7 @@ print(res)
 
 *Like **map**, the result has to be explicitly (явно) converted to a list if you want to print it.*
 
-## Generators
+### Generators
 
 Generators are a type of iterable, like lists or tuples.
 Unlike lists, they don't allow indexing with arbitrary indices, but they can still be iterated through with **for** loops.
@@ -1201,7 +1201,7 @@ print(list(numbers(11)))
 
 *Using generators results in improved performance, which is the result of the lazy (on demand) generation of values, which translates to lower memory usage. Furthermore, we do not need to wait until all the elements have been generated before we start to use them.*
 
-## Decorators
+### Decorators
 
 **Decorators** provide a way to modify functions using other functions.
 This is ideal when you need to extend the functionality of functions that you don't want to modify.  
@@ -1256,7 +1256,7 @@ def print_text():
 This will have the same result as the above code.  
 *A single function can have multiple decorators.*
 
-## Recursion
+### Recursion
 
 Recursion is a very important concept in functional programming.
 The fundamental part of recursion is self-reference - functions calling themselves. It is used to solve problems that can be broken up into easier sub-problems of the same type.
@@ -1315,7 +1315,7 @@ True
 False
 ```
 
-## Sets
+### Sets
 
 ---
 
@@ -1330,3 +1330,125 @@ print("spam" not in word_set) # False
 ```
 
 *To create an empty set, you must use set(), as {} creates an empty dictionary.*
+
+Sets differ from lists in several ways, but share several list operations such as **len**.
+
+* They are unordered, which means that they can't be indexed.
+* They **cannot** contain **duplicate** elements.
+* Due to the way they're stored, it's **faster** to check whether an item is part of a set, rather than part of a list.
+* Instead of using **append** to add to a set, use **add**.
+* The method remove removes a specific element from a set; pop removes an arbitrary element.
+
+```py
+nums = {1, 2, 1, 3, 1, 4, 5, 6}
+print("There is a set nums: ", nums) # There is no dupliacate 1 element
+nums.add(-7) # add -7 element
+nums.remove(3) # remove 3 element
+print("There is a changed set nums", nums)
+
+# Result:
+{1, 2, 3, 4, 5, 6}
+{1, 2, 4, 5, 6, -7}
+```
+
+*__Basic__ uses of sets include membership testing and the elimination of duplicate entries.*
+
+Sets can be combined using mathematical operations.
+
+* The **union** operator | combines two sets to form a new one containing items in either.
+* The **intersection** operator & gets items only in both.
+* The **difference** operator - gets items in the first set but not in the second.
+* The **symmetric difference** operator ^ gets items in either set, but not both.
+
+```py
+first = {1, 2, 3, 4, 5, 6}
+second = {4, 5, 6, 7, 8, 9}
+print(first | second) # union
+print(first & second) # intersection
+print(first - second) # difference
+print(second - first) # difference
+print(first ^ second) # symmetryc difference
+
+# Result:
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+{4, 5, 6}
+{1, 2, 3}
+{8, 9, 7}
+{1, 2, 3, 7, 8, 9}
+```
+
+### Data Structures
+
+As we have seen in the previous lessons, Python supports the following data structures: **lists, dictionaries, tuples, sets.**
+
+**When to use a dictionary**:
+
+* When you need a logical association between a key:value pair.
+* When you need fast lookup for your data, based on a custom key.
+* When your data is being constantly modified. Remember, **dictionaries are mutable**.
+
+**When to use the other types:**
+
+* Use **lists** if you have a collection of data that does not need random access. Try to choose lists when you need a simple, iterable collection that is modified frequently.
+* Use a **set** if you need uniqueness for the elements.
+* Use **tuples** when your data cannot change.
+
+*Many times, a **tuple** is used in combination with a **dictionary**, for example, a **tuple** might represent a key, because it's immutable.*
+
+### itertools
+
+The module itertools is a standard library that contains several functions that are useful in functional programming.
+One type of function it produces is infinite iterators.
+
+* The function **count** counts up infinitely from a value.
+* The function **cycle** infinitely iterates through an iterable (for instance a list or * string).
+* The function **repeat** repeats an object, either infinitely or a specific number of times.  
+**Example:**
+
+```py
+from itertools import count, cycle, repeat
+
+for i in count(3):
+    print(i)
+    if i >= 11:
+        break
+```
+
+There are many functions in **itertools** that operate on iterables, in a similar way to **map** and **filter**.  
+Some examples:  
+
+* **takewhile** - takes items from an iterable while a predicate function remains true;
+* **chain** - combines several iterables into one long one;
+* **accumulate** - returns a running total of values in an iterable.
+
+```py
+from itertools import accumulate, takewhile
+
+nums = list(accumulate(range(8)))
+print(nums)
+print(list(takewhile(lambda x: x<= 6, nums)))
+
+# Result:
+[0, 1, 3, 6, 10, 15, 21, 28]
+[0, 1, 3, 6]
+```
+
+There are also several combinatoric functions in itertool, such as product and permutation.
+These are used when you want to accomplish a task with all possible combinations of some items.  
+**Example:**
+
+```py
+letters = ("A", "B")
+print(list(product(letters, range(2))))
+print(list(permutations(letters)))
+
+letters_permute = list(permutations(letters))
+print("letters permutable", letters_permute[1])
+
+# Result:
+[('A', 0), ('A', 1), ('B', 0), ('B', 1)]
+[('A', 'B'), ('B', 'A')]
+letters permutable ('B', 'A')
+```
+
+Module 6 Quiz

@@ -1,6 +1,8 @@
 # from random import randint  # standart module
 # from math import pi, sqrt     # another standart module
-
+# from itertools import count, cycle, repeat
+# from itertools import accumulate, takewhile, chain
+from itertools import product, permutations
 
 # print range from 0 to 100 by 5 step or 100 / 5 = 20 items
 # print(list(range(0, 100, 5)))
@@ -350,12 +352,12 @@
 
 # ------------------------ Decorators -----------------
 
-def decor(func):
-    def wrap():
-        print("=========")
-        func()
-        print("=========")
-    return wrap
+# def decor(func):
+#     def wrap():
+#         print("=========")
+#         func()
+#         print("=========")
+#     return wrap
 
 # --------- Так неудобно исп. декоратор ------------- 
 
@@ -418,16 +420,74 @@ def decor(func):
 #        return fib(x - 1) + fib(x - 2)
 # print(fib(4))
 
-num_set = {1, 2, 3, 4, 5}
-word_set = set(["spam", "eggs", "sausage"])
+# ---------- Sets -------------------
 
-print(3 in num_set) # True
-print("spam" not in word_set) # False
+# num_set = {1, 2, 3, 4, 5}
+# word_set = set(["spam", "eggs", "sausage"])
+# 
+# print(3 in num_set) # True
+# print("spam" not in word_set) # False
+# 
+# # Empty Sets or Dictionary 
+# 
+# empt_set = set() # -- empty Set
+# empt_set2 = {} # ---- empty Dictionary
+# 
+# print(empt_set, empt_set2)
 
-# Empty Sets or Dictionary 
 
-empt_set = set() # -- empty Set
-empt_set2 = {} # ---- empty Dictionary
+# nums = {1, 2, 1, 3, 1, 4, 5, 6} 
+# print("There is a set nums: ", nums) # There is no dupliacate 1 element
+# nums.add(-7) # add -7 element
+# nums.remove(3) # remove 3 element
+# print("There is a changed set nums", nums)
+# # Result: {1, 2, 3, 4, 5, 6}
+# # {1, 2, 4, 5, 6, -7}
 
-print(empt_set, empt_set2)
+# first = {1, 2, 3, 4, 5, 6}
+# second = {4, 5, 6, 7, 8, 9}
+# print(first | second) # union
+# print(first & second) # intersection
+# print(first - second) # difference
+# print(second - first) # difference
+# print(first ^ second) # symmetryc difference
+
+
+# -------- from itertools import count, cycle, repeat --------------
+
+# for i in count(3):
+#     print(i)
+#     if i >= 11:
+#         break
+
+
+# -------- from itertools import accumulate, takewhile, chain -----
+
+# nums_accum = list(accumulate(range(8))) # accumulate
+# nums2 = list(chain(range(8), nums_accum)) # chain
+# 
+# print("list range(8)","\n", list(range(8)))
+# print("accumulate func","\n", nums_accum)
+# # takewhile
+# print("takewhile func x<=6","\n", list(takewhile(lambda x: x<=6, nums_accum)))
+# print("chain nums2 and nums_accum","\n", nums2)
+
+
+
+# nums = [2, 4, 6, 7, 9, 8]
+# 
+# # ------------ takewhile work while True ------------
+# a =  takewhile ( lambda  x: x%2==0, nums)
+# print(list(a))
+# Result: [2, 4, 6] but not 8
+
+
+# -------- from itertools import product, permutations ----
+
+letters = ("A", "B")
+print(list(product(letters, range(4))))
+print(list(permutations(letters)))
+
+letters_permute = list(permutations(letters))
+print("letters permutable", letters_permute[1])
 
