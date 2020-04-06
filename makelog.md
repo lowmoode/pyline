@@ -49,7 +49,7 @@ $pip list # будут только   setuptools, pip и  wheel
 
 Теперь можно устанавливать пакеты
 
-```bash 
+```bash
 pip install numpy
 pip install numpy
 ```

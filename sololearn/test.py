@@ -484,10 +484,50 @@ from itertools import product, permutations
 
 # -------- from itertools import product, permutations ----
 
-letters = ("A", "B")
-print(list(product(letters, range(4))))
-print(list(permutations(letters)))
+# letters = ("A", "B")
+# print(list(product(letters, range(4))))
+# print(list(permutations(letters)))
+# 
+# letters_permute = list(permutations(letters))
+# print("letters permutable", letters_permute[1])
 
-letters_permute = list(permutations(letters))
-print("letters permutable", letters_permute[1])
+# ---------------- Module 6 Quiz ---------------
+
+# def power(x, y):
+#     if y == 0:
+#         return 1
+#     else:
+#         return x * power(x, y - 1)
+# 
+# print(power(2, 3))
+
+# Question 3
+
+# a = (lambda x: x * (x + 1))(6)
+# print(a)
+
+# Fill in the blanks to leave only even numbers
+# in the list
+
+# nums = [1, 2, 8, 3, 7]
+# res = list(filter(lambda x: x % 2 == 0, nums))
+# print(res)
+
+# Drag and drop from the options below to print 
+# only the items in the set "a" that are not in 
+# the set "b".
+
+# print (a - b)
+
+# -------- Object-Oriented Programming ----------------
+
+class Cat:
+    def __init__(self, color, legs):
+        self.color = color
+        self.legs = legs
+felix = Cat("ginger", 4)
+rover = Cat("dog-colored", 4)
+stumpy = Cat("brown", 3)
+
+
 

@@ -1365,15 +1365,15 @@ first = {1, 2, 3, 4, 5, 6}
 second = {4, 5, 6, 7, 8, 9}
 print(first | second) # union
 print(first & second) # intersection
-print(first - second) # difference
-print(second - first) # difference
+print(first - second) # difference a not b
+print(second - first) # difference b not a
 print(first ^ second) # symmetryc difference
 
 # Result:
-{1, 2, 3, 4, 5, 6, 7, 8, 9}
-{4, 5, 6}
-{1, 2, 3}
-{8, 9, 7}
+{1, 2, 3, 4, 5, 6, 7, 8, 9} # union
+{4, 5, 6} # intersection
+{1, 2, 3} # difference a not b
+{8, 9, 7} # difference b not a
 {1, 2, 3, 7, 8, 9}
 ```
 
@@ -1433,7 +1433,7 @@ print(list(takewhile(lambda x: x<= 6, nums)))
 [0, 1, 3, 6]
 ```
 
-There are also several combinatoric functions in itertool, such as product and permutation.
+There are also several combinatoric functions in itertool, such as **product** and **permutation**.
 These are used when you want to accomplish a task with all possible combinations of some items.  
 **Example:**
 
@@ -1452,3 +1452,19 @@ letters permutable ('B', 'A')
 ```
 
 Module 6 Quiz
+
+## Object-Oriented Programming
+
+---
+
+### Classes
+
+We have previously looked at two paradigms of programming - **imperative** (using statements, loops, and functions as subroutines), and **functional** (using pure functions, higher-order functions, and recursion).
+
+Another very popular paradigm is **object-oriented programming** (OOP).
+Objects are created using **classes**, which are actually the focal point of OOP.
+The class describes what the object will be, but is separate from the object itself. In other words, a class can be described as an object's blueprint, description, or definition.
+You can use the same class as a blueprint for creating multiple different objects.
+
+Classes are created using the keyword **class** and an indented block, which contains class **methods** (which are functions).
+Below is an example of a simple class and its objects.
