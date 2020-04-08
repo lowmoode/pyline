@@ -521,13 +521,72 @@ from itertools import product, permutations
 
 # -------- Object-Oriented Programming ----------------
 
-class Cat:
-    def __init__(self, color, legs):
+# class Cat:
+#     def __init__(self, color, legs):
+#         self.color = color
+#         self.legs = legs
+# felix = Cat("ginger", 4)
+# rover = Cat("dog-colored", 4)
+# stumpy = Cat("brown", 3)
+
+
+
+# class Cat:
+#     def __init__(self, color, legs):
+#         self.color = color
+#         self.legs = legs
+# 
+# felix = Cat("ginger", 4)
+# print(felix.color, felix.legs)
+
+# class Dog:
+#     def __init__(self, name, color):
+#         self.name = name
+#         self. color = color
+# 
+#     def bark(self): # all methods must have self as their first parameter.
+#         print("Woof!")
+# 
+# fido = Dog("Fido", "brown")
+# print(fido.name)
+# fido.bark()
+
+# class Dog:
+#     legs = 4
+#     def __init__(self, name, color):
+#         self.name = name
+#         self.color = color
+# 
+# fido = Dog("Fido", "brown")
+# print(fido.legs)
+# print(Dog.legs)
+
+# undefined attribute
+
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+# 
+# rect = Rectangle(7, 8)
+# print(rect.color)
+
+## Result:
+## AttributeError: 'Rectangle' object has no attribute 'color'
+
+class Animal:
+    def __init__(self, name, color):
+        self.name = name
         self.color = color
-        self.legs = legs
-felix = Cat("ginger", 4)
-rover = Cat("dog-colored", 4)
-stumpy = Cat("brown", 3)
 
+class Cat(Animal):
+    def purr(self):
+        print("Purr...")
 
+class Dog(Animal):
+    def bark(self):
+        print("Woof!")
 
+fido = Dog("Fido", "brown")
+print(fido.color)
+fido.bark()
