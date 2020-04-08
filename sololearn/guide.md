@@ -1566,7 +1566,7 @@ print(rect.color)
 AttributeError: 'Rectangle' object has no attribute 'color'
 ```
 
-### Ingeritance
+### Inheritance
 
 **Inheritance** provides a way to share functionality between classes.
 Imagine several classes, **Cat, Dog, Rabbit** and so on. Although they may differ in some ways (only **Dog** might have the method **bark**), they are likely to be similar in others (all having the attributes **color** and **name**).
@@ -1596,3 +1596,83 @@ fido.bark()
 brown
 Woof!
 ```
+
+A class that inherits from another class is called a **subclass**.
+A class that is inherited from is called a **superclass**.
+If a class inherits from another with the same attributes or methods, **it overrides them**.
+
+```py
+class Wolf:# ------------------- Superclass
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+    def bark(self):
+        print("Grr...")
+
+class Dog(Wolf): # ------------------- Subclass
+    def bark(self):
+        print("Woof")
+
+husky = Dog("Max", "grey")
+husky.bark()
+
+# Result:
+Woof
+```
+
+*In the example above, Wolf is the superclass, Dog is the subclass.*
+
+Inheritance can also be **indirect**. One class can inherit from another, and that class can inherit from a third class.  
+**Example:**
+
+```py
+class A:
+    def method(self):
+        print("A method")
+
+class B(A):
+    def another_method(self):
+        print("B method")
+
+class C(B):
+    def third_method(self):
+        print("C method")
+
+c = C()
+c.method()
+c.another_method()
+c.third_method()
+
+# Result:
+A method
+B method
+C method
+```
+
+*However, circular inheritance is not possible.*
+
+The function **super** is a useful inheritance-related function that refers to the parent class. It can be used to find the method with a certain name in an object's superclass.  
+**Example:**
+
+```py
+class A:
+    def spam(self):
+        print(1)
+    
+class B(A):
+    def spam(self):
+        print()
+        super().spam()
+
+B().spam()
+
+## Result:
+2
+1
+```
+
+*super().spam() calls the spam method of the superclass.*
+
+### Magic Methods & Operator Overloading
+

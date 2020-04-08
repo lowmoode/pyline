@@ -574,19 +574,81 @@ from itertools import product, permutations
 ## Result:
 ## AttributeError: 'Rectangle' object has no attribute 'color'
 
-class Animal:
-    def __init__(self, name, color):
-        self.name = name
-        self.color = color
+##  -------------------------  Inheritance ---------------------
 
-class Cat(Animal):
-    def purr(self):
-        print("Purr...")
+# class Animal:
+#     def __init__(self, name, color):
+#         self.name = name
+#         self.color = color
+# 
+# class Cat(Animal):
+#     def purr(self):
+#         print("Purr...")
+# 
+# class Dog(Animal):
+#     def bark(self):
+#         print("Woof!")
+# 
+# fido = Dog("Fido", "brown")
+# print(fido.color)
+# fido.bark()
 
-class Dog(Animal):
-    def bark(self):
-        print("Woof!")
+# class Wolf:# ------------------- Superclass
+#     def __init__(self, name, color):
+#         self.name = name
+#         self.color = color
+# 
+#     def bark(self):
+#         print("Grr...")
+# 
+# class Dog(Wolf): # ------------------- Subclass
+#     def bark(self):
+#         print("Woof")
+#     
+# husky = Dog("Max", "grey")
+# husky.bark()
+# 
+# ## Result:
+# ## Woof
 
-fido = Dog("Fido", "brown")
-print(fido.color)
-fido.bark()
+## -------------- indirect inheritance -----------
+
+# class A:
+#     def method(self):
+#         print("A method")
+# 
+# class B(A):
+#     def another_method(self):
+#         print("B method")
+# 
+# class C(B):
+#     def third_method(self):
+#         print("C method")
+# 
+# c = C()
+# c.method()
+# c.another_method()
+# c.third_method()
+
+# Result:
+# A method
+# B method
+# C method
+
+# a = A()
+# a.third_method() # --------   AttributeError:
+
+# class A:
+#     def spam(self):
+#         print(1)
+#     
+# class B(A):
+#     def spam(self):
+#         print()
+#         super().spam()
+# 
+# B().spam()
+# 
+# ## Result:
+# # 2
+# # 1
