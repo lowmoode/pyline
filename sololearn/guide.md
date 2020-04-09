@@ -806,7 +806,7 @@ Python contains many useful built-in functions and methods to accomplish common 
 
 ### String Functions
 
-**join** - joins a list of strings with another string as a separator.  
+**join** - joins **a list** of strings with another string as a separator.  
 **replace** - replaces one substring in a string with another.  
 **startswith** and **endswith** - determine if there is a substring at the start and end of a string, respectively.  
 To change the case of a string, you can use **lower** and **upper**.  
@@ -1069,8 +1069,8 @@ print((lambda x: x**2 + 5*x + 4)(-4))
 Lambda functions can be assigned to variables, and used like normal functions.
 
 ```py
-double = lambda x: x * 2
-print(double(7))
+**double =** lambda x: x * 2
+print(**double(7**))
 
 # Result:
 >>>
@@ -1351,14 +1351,14 @@ print("There is a changed set nums", nums)
 {1, 2, 4, 5, 6, -7}
 ```
 
-*__Basic__ uses of sets include membership testing and the elimination of duplicate entries.*
+*__Basic__ uses of sets include \m\embership testing and the elimination of duplicate entries.*
 
-Sets can be combined using mathematical operations.
+Sets can \b\e combined using \m\athematical operations.
 
-* The **union** operator | combines two sets to form a new one containing items in either.
-* The **intersection** operator & gets items only in both.
-* The **difference** operator - gets items in the first set but not in the second.
-* The **symmetric difference** operator ^ gets items in either set, but not both.
+* The **union** **operator |** combines two sets to form a new one containing items in either.
+* The **intersection** **operator &** gets items only in both.
+* The **differe\n\ce** **operator -** gets items in the first set but not in the second.
+* T\h\e **symmetric difference** **operator ^** gets items in either set,\ \\b\ut not both.
 
 ```py
 first = {1, 2, 3, 4, 5, 6}
@@ -1659,7 +1659,7 @@ The function **super** is a useful inheritance-related function that refers to t
 class A:
     def spam(self):
         print(1)
-    
+
 class B(A):
     def spam(self):
         print()
@@ -1676,3 +1676,71 @@ B().spam()
 
 ### Magic Methods & Operator Overloading
 
+**Magic methods** are special methods which have **double underscores** at the beginning and end of their names.
+They are also known as **dunders**.
+So far, the only one we have encountered is **\_\_init__**, but there are several others.
+They are used to create functionality that can't be represented as a normal method.
+
+One common use of them is **operator overloading**.
+This means defining operators for custom classes that allow operators such as + and * to be used on them.
+An example magic method is **\_\_add__** for +.  
+
+```py
+class Vector2D:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __add__(self, other):
+        return Vector2D(self.x + other.x, self.y + other.y)
+
+first = Vector2D(5, 7)
+second = Vector2D(3, 9)
+result = first + second
+print(result.x)
+print(result.y)
+
+## Result:
+8
+16
+```
+
+*The **\_\_add__** method allows for the definition of a custom behavior for the + operator in our class.
+As you can see, it adds the corresponding attributes of the objects and returns a new object, containing the result.
+Once it's defined, we can add two objects of the class together.*
+
+More magic methods for common operators:
+**\_\_sub__** for -
+**\_\_mul__** for *
+**\_\_truediv__** for /
+**\_\_floordiv__** for //
+**\_\_mod__** for %
+**\_\_pow__** for **
+**\_\_and__** for &
+**\_\_xor__** for ^
+**\_\_or__** for |
+
+The expression **x + y** is translated into **x.\_\_add__(y)**.
+However, if x hasn't implemented \_\_add__, and x and y are of different types, then **y.\_\_radd__(x)**  is called.
+There are equivalent r methods for all magic methods just mentioned.  
+**Example:**
+
+```py
+class SpecialString:
+    def __init__(self, cont):
+        self.cont = cont
+
+    def __truediv__(self, other):
+        line = "=" * len(other.cont)
+        return "\n".join([self.cont, line, other.cont])
+
+spam = SpecialString("spam")
+hello = SpecialString("Hello world!")
+print(spam / hello)
+
+# Result:
+spam
+============
+Hello world!
+```
+
+*In the example above, we defined the **division** operation for our class **SpecialString**.*
