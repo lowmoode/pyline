@@ -72,7 +72,7 @@ Functions can also be used as arguments of other functions.
 
 ## Modules
 
-**import** *module_name* at top of your code  
+**import** *module_name*, at top of your code
 **module_name** *.var* to access functions and value with the name **var**  
  **from math import \*** или импорт всего модуля совсем не рекомендуется  
 
@@ -1682,7 +1682,7 @@ So far, the only one we have encountered is **\_\_init__**, but there are severa
 They are used to create functionality that can't be represented as a normal method.
 
 One common use of them is **operator overloading**.
-This means defining operators for custom classes that allow operators such as + and * to be used on them.
+This means defining operators for custom classes that allow operators such as + and *\ to be used on them.
 An example magic method is **\_\_add__** for +.  
 
 ```py
@@ -1708,19 +1708,19 @@ print(result.y)
 As you can see, it adds the corresponding attributes of the objects and returns a new object, containing the result.
 Once it's defined, we can add two objects of the class together.*
 
-More magic methods for common operators:
-**\_\_sub__** for -
-**\_\_mul__** for *
-**\_\_truediv__** for /
-**\_\_floordiv__** for //
-**\_\_mod__** for %
-**\_\_pow__** for **
-**\_\_and__** for &
-**\_\_xor__** for ^
-**\_\_or__** for |
+More magic methods for common operators:  
+**\_\_sub\_\_** for -  
+**\_\_mul\_\_** for *  
+**\_\_truediv\_\_** for /  
+**\_\_floordiv\_\_** for //  
+**\_\_mod\_\_** for %  
+**\_\_pow\_\_** for **  
+**\_\_and\_\_** for &  
+**\_\_xor\_\_** for ^  
+**\_\_or\_\_** for |
 
 The expression **x + y** is translated into **x.\_\_add__(y)**.
-However, if x hasn't implemented \_\_add__, and x and y are of different types, then **y.\_\_radd__(x)**  is called.
+However, if x hasn't implemented \_\_add__, and x and y are of different types, then **y.\_\_radd\_\_(x)** is called.
 There are equivalent r methods for all magic methods just mentioned.  
 **Example:**
 
@@ -1744,3 +1744,59 @@ Hello world!
 ```
 
 *In the example above, we defined the **division** operation for our class **SpecialString**.*
+
+Python also provides magic methods for comparisons.
+
+\_\_lt\_\_ for <  
+\_\_le\_\_ for <= - less than or equal to
+\_\_eq\_\_ for ==  
+\_\_ne\_\_ for !=  
+\_\_gt\_\_ for >  
+\_\_ge\_\_ for >=  
+
+if _\_ne__ is not implemented, it returns the opposite of **\_\_eq\_\_**.
+There are no other relationshps between the other operators.
+**Example:**
+
+```py
+class SpecialString:
+def __init__(self, cont):
+self.cont = cont
+
+def __gt__(self, other): # gt mean "greater than"
+for index in range(len(other.cont) + 1):
+result = other.cont[:index] + " > " + self.cont
+result += " > " + other.cont[index:]
+print(result)
+
+spam = SpecialString("spam")
+eggs = SpecialString("eggs")
+spam > eggs
+
+# Result:
+
+ > spam > eggs
+e > spam > ggs
+eg > spam > gs
+egg > spam > s
+eggs > spam >
+```
+
+*As you can see, you can define any custom behavior for the overloaded operators.*
+
+There are several magic methods for making classes act like containers.
+
+**\_\_len\_\_** for len()
+**\_\_getitem\_\_** for indexing
+**\_\_setitem\_\_** for assigning to indexed values
+**\_\_delitem\_\_** for deleting indexed values
+**\_\_iter\_\_** for iteration over objects (e.g., in for loops)
+**\_\_contains\_\_** for in
+
+*We have overridden the len() function for the class VagueList to return a random number.
+The indexing function also returns a random item in a range from the list, based on the expression.*
+
+Question:  
+Which magic method call is made by x\[y] = z?  
+Answer:  
+**x.\_\_setitem\_\_(y, z)**

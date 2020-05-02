@@ -2,7 +2,8 @@
 # from math import pi, sqrt     # another standart module
 # from itertools import count, cycle, repeat
 # from itertools import accumulate, takewhile, chain
-from itertools import product, permutations
+# from itertools import product, permutations
+import random
 
 # print range from 0 to 100 by 5 step or 100 / 5 = 20 items
 # print(list(range(0, 100, 5)))
@@ -690,4 +691,41 @@ from itertools import product, permutations
 # ============
 # Hello world!
 
+# ----------- Magic Methods. Comparisons. ------
 
+# class SpecialString:
+#     def __init__(self, cont):
+#         self.cont = cont
+# 
+#     def __gt__(self, other): # gt mean "greater than"
+#         for index in range(len(other.cont) + 1):
+#             result = other.cont[:index] + " > " + self.cont
+#             result += " > " + other.cont[index:]
+#             print(result)
+# 
+# spam = SpecialString("spam")
+# eggs = SpecialString("eggs")
+# spam > eggs
+
+# ----------- Magic Methods. Others. --------
+# Тут мы переназначим ф-ю len() для класса VagueList 
+# для возврата случайного числа
+
+# import random
+class VagueList:
+    def __init__(self, cont):
+        self.cont = cont
+# getitem for indexing takes self and index
+# return index + random number form -1 to 1
+    def __getitem__(self, index):
+        return self.cont[index + random.randint(-1, 1)]
+
+    def __len__ (self):
+        return random.randint(0, len(self.cont) * 2)
+    
+vague_list = VagueList(["A", "B", "C", "D", "E"])
+
+print(len(vague_list)) # переназн. ф-я len() --> random
+print(len(vague_list)) 
+print(vague_list[2])# 
+print(vague_list[2])
