@@ -727,5 +727,5 @@ vague_list = VagueList(["A", "B", "C", "D", "E"])
 
 print(len(vague_list)) # переназн. ф-я len() --> random
 print(len(vague_list)) 
-print(vague_list[2])# 
+print(vague_list[2]) # 
 print(vague_list[2])
