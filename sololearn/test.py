@@ -712,20 +712,32 @@ import random
 # для возврата случайного числа
 
 # import random
-class VagueList:
-    def __init__(self, cont):
-        self.cont = cont
-# getitem for indexing takes self and index
-# return index + random number form -1 to 1
-    def __getitem__(self, index):
-        return self.cont[index + random.randint(-1, 1)]
+# class VagueList:
+#     def __init__(self, cont):
+#         self.cont = cont
+# # getitem for indexing takes self and index
+# # return index + random number form -1 to 1
+#     def __getitem__(self, index):
+#         return self.cont[index + random.randint(-1, 1)]
+# 
+#     def __len__ (self):
+#         return random.randint(0, len(self.cont) * 2)
+#     
+# vague_list = VagueList(["A", "B", "C", "D", "E"])
+# 
+# print(len(vague_list)) # переназн. ф-я len() --> random
+# print(len(vague_list)) 
+# print(vague_list[2]) # 
+# print(vague_list[2])
 
-    def __len__ (self):
-        return random.randint(0, len(self.cont) * 2)
-    
-vague_list = VagueList(["A", "B", "C", "D", "E"])
+a = 42  # Create object <42>
+b = a   # Increase ref. count of <42>
+c = [a] # Increase ref. count of <42>
+print(a)
 
-print(len(vague_list)) # переназн. ф-я len() --> random
-print(len(vague_list)) 
-print(vague_list[2]) # 
-print(vague_list[2])
+del a     # Decrease ref. count of <42>
+print(a)
+b = 100   # Decrease ref. count of <42>
+c[0] = -1 # Decrease ref. count of <42>
+
+
