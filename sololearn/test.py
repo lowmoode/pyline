@@ -730,14 +730,34 @@ import random
 # print(vague_list[2]) # 
 # print(vague_list[2])
 
-a = 42  # Create object <42>
-b = a   # Increase ref. count of <42>
-c = [a] # Increase ref. count of <42>
-print(a)
+# a = 42  # Create object <42>
+# b = a   # Increase ref. count of <42>
+# c = [a] # Increase ref. count of <42>
+# print(a)
+# 
+# del a     # Decrease ref. count of <42>
+# print(a)
+# b = 100   # Decrease ref. count of <42>
+# c[0] = -1 # Decrease ref. count of <42>
 
-del a     # Decrease ref. count of <42>
-print(a)
-b = 100   # Decrease ref. count of <42>
-c[0] = -1 # Decrease ref. count of <42>
 
+class Queue:
+    def __init__(self, contents):
+        self._hiddenlist = list(contents)
 
+    def push(self, value):
+        self._hiddenlist.insert(0, value)
+
+    def pop(self):
+        return self._hiddenlist.pop(-1)
+
+    def __repr__(self):
+        return "Queue({})".format(self._hiddenlist)
+
+queue = Queue([1,2,3])
+print(queue)
+queue.push(0)
+print(queue)
+queue.pop()
+print(queue)
+print(queue._hiddenlist)
