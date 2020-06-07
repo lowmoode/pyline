@@ -32,3 +32,16 @@ def print_first_and_last_sorted(sentence):
     words = sort_sentence(sentence)
     print_first_word(words)
     print_last_word(words)
+
+"""
+Typing ex25. is annoying. A shortcut is to do your import like this:
+from ex25 import * which
+is like saying, ”Import everything from ex25.”
+
+Try doing this: help(ex25) and also help(ex25.break_words). 
+Notice how you get help for your module and how the help is 
+those odd  strings you put after each function in ex25? Those
+special strings are called documentation comments, and we’ll 
+be seeing more of them.
+
+"""
