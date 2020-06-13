@@ -765,12 +765,85 @@ import random
 
 # Double underscore mangled the names
 
-class Spam:
-  __egg = 7
-  def print_egg(self):
-    print(self.__egg)
+# class Spam:
+#   __egg = 7
+#   def print_egg(self):
+#     print(self.__egg)
+# 
+# s = Spam()
+# s.print_egg()
+# print(s._Spam__egg)
+# print(s.__egg)
 
-s = Spam()
-s.print_egg()
-print(s._Spam__egg)
-print(s.__egg)
+# -------------- Class & Static Methods ------------
+
+# class Rectangle:
+#     """ В инициализаторе класса два значения которые можно сократить до одного
+#     до одного """
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.heigh = height
+# 
+#     def calculate_area(self):
+#         return self.width * self.heigh
+# 
+#     @classmethod # буква в букву с декоратором
+#     """ниже метод не экземпляра класса, а самого класса
+#     и поэтому метод не может влиять на экземпляр, а только на класс"""
+#     
+#     def new_square(cls, side_lenght):
+#         return cls(side_lenght, side_lenght)
+# 
+# square = Rectangle.new_square(5)
+# print(square.calculate_area())
+# 
+# squre2 = Rectangle(5, 6)
+# print(squre2.calculate_area())
+# 
+# # Result: 
+# # >>>
+# # 25
+# # >>>
+
+# -------- Static Methods ----------
+
+# class Pizza:
+#     def __init__(self, toppings):
+#         self.toppings = toppings
+# 
+# 
+#     @staticmethod
+#     def validate_topping(topping):
+#         if topping == "pineapple":
+#             raise ValueError("No pineapples!")
+#         else:
+#             print(topping)
+#             return True 
+# 
+# ingredients = ["Cheese", "onions", "spam"]
+# if all(Pizza.validate_topping(i) for i in ingredients):
+#     some_pizza = Pizza(ingredients)
+# 
+# print(some_pizza.toppings) # Resutl: ['Cheese', 'onions', 'spam']
+
+# --------------- Properties ----------------
+
+
+class Pizza:
+    def __init__(self, toppings):
+        self.toppings = toppings
+
+    @property
+    def pineapple_allowed(self):
+        return False
+
+pizza = Pizza(["cheese", "tomato"])
+print(pizza.pineapple_allowed)
+pizza.pineapple_allowed = True
+
+"""
+Result:
+False
+AttributeError: can't set attribute
+"""
+
