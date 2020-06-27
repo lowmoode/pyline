@@ -4,27 +4,15 @@ This README would normally document whatever steps are necessary to get your app
 
 ## What is this repository for"?" ##
 
-* Быстрые записи для Python в одну строчку  
 * Version 1.0.0
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up"?" ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
 
 ### Contribution guidelines ###
 
-* Fast info about git and Python
-* Writing tests
-* Code review
-* Other guidelines
+
 
 ### Who do I talk to"?" ###
 
-* Repo owner or admin
-* Other community or team contact
