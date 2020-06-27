@@ -2082,4 +2082,6 @@ Object-orientation is very useful when managing different objects and their rela
 
 Let's look at an example project that shows how classes are used in game development.
 The game to be developed is an old fashioned text-based adventure game.
-Below is the function handling input and simple parsing.
+Below is the function handling input and simple parsing.  
+
+some other text to check repl.it
