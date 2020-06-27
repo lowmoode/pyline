@@ -2078,4 +2078,8 @@ True
 
 ---
 
-ыва
+Object-orientation is very useful when managing different objects and their relations. That is especially useful when you are developing games with different characters and features.
+
+Let's look at an example project that shows how classes are used in game development.
+The game to be developed is an old fashioned text-based adventure game.
+Below is the function handling input and simple parsing.
