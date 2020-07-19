@@ -4,6 +4,7 @@
 # from itertools import accumulate, takewhile, chain
 # from itertools import product, permutations
 import random
+import re
 
 # print range from 0 to 100 by 5 step or 100 / 5 = 20 items
 # print(list(range(0, 100, 5)))
@@ -846,28 +847,77 @@ import random
 # False
 # AttributeError: can't set attribute
 # """
+# --------------Properties --- Setter/getter---------
+# class Pizza:
+#     def __init__(self, toppings):
+#         self.toppings  = toppings
+#         self._pineapple_allowed = False
+# 
+#     @property
+#     def pineapple_allowed(self):
+#         return self._pineapple_allowed
+# 
+#     @pineapple_allowed.setter
+#     def pineapple_allowed(self, value):
+#         if value:
+#             password = input("Enter the password: ")
+#             if password == "Sw0rdf1sh!":
+#                 self._pineapple_allowed = value
+#             else:
+#                 raise ValueError("Alert! Intruder!")
+# 
+# 
+# pizza = Pizza(["cheese", "tomato"])
+# print(pizza.pineapple_allowed)
+# pizza.pineapple_allowed = True
+# print(pizza.pineapple_allowed)
 
-class Pizza:
-    def __init__(self, toppings):
-        self.toppings  = toppings
-        self._pineapple_allowed = False
+# ------------ Regular Expressions -------------------
 
-    @property
-    def pineapple_allowed(self):
-        return self._pineapple_allowed
+# import re
 
-    @pineapple_allowed.setter
-    def pineapple_allowed(self, value):
-        if value:
-            password = input("Enter the password: ")
-            if password == "Sw0rdf1sh!":
-                self._pineapple_allowed = value
-            else:
-                raise ValueError("Alert! Intruder!")
+# pattern = r"spam"
+# 
+# if re.match(pattern, "spamspamspam"):
+#    print("Match")
+# else:
+#    print("No match")
+
+# Ex 2
+
+# pattern = r"spam"
+# if re.match(pattern, "eggspamsausagespam"):
+#     print("Match")
+# else:
+#     print("No match") # ------------ No match потому что проверяется начало строки pattern
+# 
+# if re.search(pattern, "eggspamsausagespam"):
+#     print("Match") # --------------- find function found a match in the string
+# else:
+#     print("No match")
+# print(re.findall(pattern, "eggspamsausagespam"))
+
+# exmpl 3
+
+# pattern = r"pam"
+# match = re.search(pattern, "eggspamsausage") # .search return iterator with methods
+# if match:
+#     print(match.group())
+#     print(match.start())
+#     print(match.end())
+#     print(match.span())
+# 
+
+# Search & Replace
+
+# Syntax:
+
+# ---    re.sub(pattern, repl, string, count=0)
+
+str = "My name is David. Hi David"
+pattern = r"David"
+newstr = re.sub(pattern, "Amy", str)
+print(newstr)
 
 
-pizza = Pizza(["cheese", "tomato"])
-print(pizza.pineapple_allowed)
-pizza.pineapple_allowed = True
-print(pizza.pineapple_allowed)
 
