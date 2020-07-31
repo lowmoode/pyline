@@ -1,0 +1,3 @@
+run = "python3 tests/asteriks_in_python.py"
+
+language = "python" # optional
