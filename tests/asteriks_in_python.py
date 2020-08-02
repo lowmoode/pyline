@@ -27,3 +27,6 @@ def transpose_list(list_of_lists):
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 """
 
+transposed_list = transpose_list([[1,2,3], [4,5,6], [7,8,9]])
+
+print(transposed_list)
