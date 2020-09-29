@@ -1167,7 +1167,8 @@ for i in countdown():
 >>>
 ```
 
-*The **yield** statement is used to define a generator, replacing the return of a function to provide a result to its caller without destroying local variables.*
+*The **yield** statement is used to define a generator, replacing the return  
+of a function to provide a result to its caller without destroying local variables.*
 
 Due to the fact that they **yield** one item at a time, generators don't have the memory restrictions of lists.
 In fact, they can be **infinite**!

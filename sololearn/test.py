@@ -914,10 +914,10 @@ import re
 
 # ---    re.sub(pattern, repl, string, count=0)
 
-str = "My name is David. Hi David"
-pattern = r"David"
-newstr = re.sub(pattern, "Amy", str)
-print(newstr)
+# str = "My name is David. Hi David"
+# pattern = r"David"
+# newstr = re.sub(pattern, "Amy", str)
+# print(newstr)
 
 
 
