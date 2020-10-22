@@ -22,7 +22,8 @@ with open("sometext.txt") as f:
 
 """
 exept - if an exception happiencs, do this
-        use try-except statement """
+        use try-except statement 
+"""
 
 try:
   print(1)

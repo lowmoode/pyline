@@ -62,14 +62,13 @@ deactivate
 
 ## Установка Virtual Evnironments на Windows
 
-
 ## Перенос проекта из Bitbucket to Github
 
-$ git clone https://lwmd@bitbucket.org/lwmd/pyline.git
+$ git clone <https://lwmd@bitbucket.org/lwmd/pyline.git>
 
 $ cd pyline/
 
-$ git remote add upstream https://github.com/lowmoode/pyline.git
+$ git remote add upstream <https://github.com/lowmoode/pyline.git>
 
 $ git push upstream master
 
@@ -79,25 +78,21 @@ Everything up-to-date
 $ vim .
 
 $ git remote -v
-origin  https://lwmd@bitbucket.org/lwmd/pyline.git (fetch)
-origin  https://lwmd@bitbucket.org/lwmd/pyline.git (push)
-upstream        https://github.com/lowmoode/pyline.git (fetch)
-upstream        https://github.com/lowmoode/pyline.git (push)
+origin  <https://lwmd@bitbucket.org/lwmd/pyline.git> (fetch)
+origin  <https://lwmd@bitbucket.org/lwmd/pyline.git> (push)
+upstream        <https://github.com/lowmoode/pyline.git> (fetch)
+upstream        <https://github.com/lowmoode/pyline.git> (push)
 
-
-$ git remote set-url origin https://github.com/lowmoode/pyline.git
-
+$ git remote set-url origin <https://github.com/lowmoode/pyline.git>
 
 $ git remote -v
-origin  https://github.com/lowmoode/pyline.git (fetch)
-origin  https://github.com/lowmoode/pyline.git (push)
-upstream        https://github.com/lowmoode/pyline.git (fetch)
-upstream        https://github.com/lowmoode/pyline.git (push)
-
+origin  <https://github.com/lowmoode/pyline.git> (fetch)
+origin  <https://github.com/lowmoode/pyline.git> (push)
+upstream        <https://github.com/lowmoode/pyline.git> (fetch)
+upstream        <https://github.com/lowmoode/pyline.git> (push)
 
 $ git remote rm upstream
 
-
 $ git remote -v
-origin  https://github.com/lowmoode/pyline.git (fetch)
-origin  https://github.com/lowmoode/pyline.git (push)
+origin  <https://github.com/lowmoode/pyline.git> (fetch)
+origin  <https://github.com/lowmoode/pyline.git> (push)

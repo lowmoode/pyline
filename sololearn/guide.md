@@ -1167,7 +1167,8 @@ for i in countdown():
 >>>
 ```
 
-*The **yield** statement is used to define a generator, replacing the return of a function to provide a result to its caller without destroying local variables.*
+*The **yield** statement is used to define a generator, replacing the return  
+of a function to provide a result to its caller without destroying local variables.*
 
 Due to the fact that they **yield** one item at a time, generators don't have the memory restrictions of lists.
 In fact, they can be **infinite**!
@@ -2195,6 +2196,7 @@ print(newstr)
 My name is Amy. Hi Amy
 ```
 
+<<<<<<< HEAD
 ## Simple Metacharacters
 
 **Metacharacters** are what make regular expressions more powerful than normal string methods.
@@ -2235,3 +2237,6 @@ These match the start and end of a string, respectively.
 # Result:
 
 ```
+=======
+## Simple Metacharacters next
+>>>>>>> 6c5001c095d11873716a3f624c45ff1cdaf58244
